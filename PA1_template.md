@@ -155,7 +155,7 @@ Make a histogram of the total number of steps taken per day.
 
 ```r
 activity1 %>% ggplot(aes(stepsperday)) + 
-    geom_histogram(binwidth = 5000) + ggtitle("Number of Steps per Day") + xlab("Steps per Day") + 
+    geom_histogram(binwidth = 5000) + ggtitle("Number of Steps per Day") + xlab("Steps") + 
     ylab("Count")
 ```
 
@@ -195,7 +195,7 @@ activity2 <- activity %>% filter(!is.na(steps)) %>%
 ```r
 activity2 %>% ggplot(aes(interval, avgsteps)) + 
     geom_line() + ggtitle("Average Number of Steps per 5-Minute Interval") + xlab("5-Minute Intervals") + 
-    ylab("Average No. of Steps")
+    ylab("Average Steps")
 ```
 
 ![](PA1_template_files/figure-html/time series-1.png)<!-- -->
@@ -251,7 +251,7 @@ activity4 <- activity3 %>% group_by(date) %>%
 
 ```r
 activity4 %>% ggplot(aes(stepsperday)) + 
-    geom_histogram(binwidth = 5000) + ggtitle("Number of Steps per Day") + xlab("Steps per Day") + 
+    geom_histogram(binwidth = 5000) + ggtitle("Number of Steps per Day") + xlab("Steps") + 
     ylab("Count")
 ```
 
@@ -302,9 +302,9 @@ activity5 %>% group_by(interval, day) %>%
     ggplot(aes(interval, ave_newsteps)) + 
     geom_line() +
     facet_grid(day~.) + ggtitle("Average Steps per Day") +
-    xlab("5-Minute Interval") + ylab("Average No. of Steps")
+    xlab("5-Minute Interval") + ylab("Average Steps")
 ```
 
 ![](PA1_template_files/figure-html/new panel plot-1.png)<!-- -->
 
-There is a difference between the logged number of steps on weekdays and on weekends. On average, a higher number of steps are logged at lower time intervals on weekdays than on weekends. Weekdays also exhibit the highest number of steps. 
+There is a difference between the logged number of steps on weekdays and on weekends. On average, a higher number of steps are logged at lower time intervals on weekdays than on weekends. Weekdays also exhibit the highest number of steps.  
